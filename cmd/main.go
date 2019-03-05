@@ -1,7 +1,7 @@
 /*
- *   Copyright 2019 Sidhartha Mani
+ *  Copyright 2019 Sidhartha Mani
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
+ *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
  *
@@ -48,9 +48,7 @@ func main() {
 			continue
 		}
 		if len(pos) == 0 {
-			//fmt.Println("no json documents found")
 			continue
 		}
-		//fmt.Printf("json found at %+v\n", pos)
 	}
 }

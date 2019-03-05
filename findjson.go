@@ -1,7 +1,7 @@
 /*
- *   Copyright 2019 Sidhartha Mani
+ *  Copyright 2019 Sidhartha Mani
  *
- *   Licensed under the Apache License, Version 2.0 (the "License");
+ *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
  *
@@ -21,8 +21,6 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-	//"reflect"
-	//"runtime"
 )
 
 const (
@@ -78,8 +76,6 @@ func FindJSON(dataStream io.Reader, outStream io.Writer) ([]Position, error) {
 			}
 		}
 		rewind = false
-		//t := reflect.ValueOf(parseFn)
-		//fmt.Printf("%d %c: %s %s %v\n", index, r, runtime.FuncForPC(t.Pointer()).Name(), string(g), pos)
 		g, parseFnInt, rewind, state = parseFn(g, r)
 
 		parseFn = parseFnInt.(func([]rune, rune) ([]rune, interface{}, bool, int))
@@ -138,10 +134,6 @@ func parseJSON(state []rune, r rune) ([]rune, interface{}, bool, int) {
 		return state, parseJSON, false, parseError
 	}
 	if r == ']' {
-		//if state[len(state)-1] != '[' {
-		//	return state, parseJSON, false, parseError
-		//}
-		//state = state[:len(state)-1]
 		parseFn := parseJSONEndOrNextElement
 		return state, parseFn, false, parseNext
 	}
@@ -372,10 +364,6 @@ func parseJSONCurlyStart(state []rune, r rune) ([]rune, interface{}, bool, int) 
 		return state, parseJSONCurlyStart, false, parseNext
 	}
 	if r == '}' {
-		//if state[len(state)-1] != '{' {
-		//	return state, parseJSONCurlyStart, false, parseError
-		//}
-		//state = state[:len(state)-1]
 		parseFn := parseJSONEndOrNextElement
 		return state, parseFn, true, parseNext
 	}
