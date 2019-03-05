@@ -1,0 +1,27 @@
+{"log":"Running with\n","stream":"stdout","time":"2019-03-03T16:57:09.666267724Z"}
+{"log":"SERVER_ENDPOINT:      127.0.0.1:37533\n","stream":"stdout","time":"2019-03-03T16:57:09.666301166Z"}
+{"log":"ACCESS_KEY:           minio\n","stream":"stdout","time":"2019-03-03T16:57:09.666304344Z"}
+{"log":"SECRET_KEY:           ***REDACTED***\n","stream":"stdout","time":"2019-03-03T16:57:09.666306633Z"}
+{"log":"ENABLE_HTTPS:         0\n","stream":"stdout","time":"2019-03-03T16:57:09.666308915Z"}
+{"log":"SERVER_REGION:        us-east-1\n","stream":"stdout","time":"2019-03-03T16:57:09.666311073Z"}
+{"log":"MINT_DATA_DIR:        /mint/data\n","stream":"stdout","time":"2019-03-03T16:57:09.666313276Z"}
+{"log":"MINT_MODE:            core\n","stream":"stdout","time":"2019-03-03T16:57:09.666315399Z"}
+{"log":"ENABLE_VIRTUAL_STYLE: 0\n","stream":"stdout","time":"2019-03-03T16:57:09.66631818Z"}
+{"log":"\n","stream":"stdout","time":"2019-03-03T16:57:09.666321861Z"}
+{"log":"To get logs, run 'docker cp 14af4d38c14c:/mint/log /tmp/mint-logs'\n","stream":"stdout","time":"2019-03-03T16:57:09.666325149Z"}
+{"log":"\n","stream":"stdout","time":"2019-03-03T16:57:09.666328679Z"}
+{"log":"(1/13) Running aws-sdk-go tests ... done in 0 seconds\n","stream":"stdout","time":"2019-03-03T16:57:09.694847599Z"}
+{"log":"(2/13) Running aws-sdk-java tests ... done in 1 seconds\n","stream":"stdout","time":"2019-03-03T16:57:10.24576806Z"}
+{"log":"(3/13) Running aws-sdk-php tests ... done in 40 seconds\n","stream":"stdout","time":"2019-03-03T16:57:50.749214546Z"}
+{"log":"(4/13) Running aws-sdk-ruby tests ... done in 1 seconds\n","stream":"stdout","time":"2019-03-03T16:57:51.76655535Z"}
+{"log":"(5/13) Running awscli tests ... done in 1 minutes and 27 seconds\n","stream":"stdout","time":"2019-03-03T16:59:18.926187955Z"}
+{"log":"(6/13) Running mc tests ... done in 6 seconds\n","stream":"stdout","time":"2019-03-03T16:59:24.678202281Z"}
+{"log":"(7/13) Running minio-dotnet tests ... done in 7 seconds\n","stream":"stdout","time":"2019-03-03T16:59:31.822832022Z"}
+{"log":"(8/13) Running minio-go tests ... done in 0 seconds\n","stream":"stdout","time":"2019-03-03T16:59:31.922946291Z"}
+{"log":"(9/13) Running minio-java tests ... done in 2 seconds\n","stream":"stdout","time":"2019-03-03T16:59:33.732588311Z"}
+{"log":"(10/13) Running minio-js tests ... done in 23 seconds\n","stream":"stdout","time":"2019-03-03T16:59:56.087507382Z"}
+{"log":"(11/13) Running minio-py tests ... done in 10 seconds\n","stream":"stdout","time":"2019-03-03T17:00:06.559047248Z"}
+{"log":"(12/13) Running s3cmd tests ... done in 52 seconds\n","stream":"stdout","time":"2019-03-03T17:00:58.072674124Z"}
+{"log":"(13/13) Running security tests ... done in 0 seconds\n","stream":"stdout","time":"2019-03-03T17:00:58.080311757Z"}
+{"log":"\n","stream":"stdout","time":"2019-03-03T17:00:58.080345952Z"}
+{"log":"All tests ran successfully\n","stream":"stdout","time":"2019-03-03T17:00:58.080358348Z"}
