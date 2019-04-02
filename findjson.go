@@ -316,6 +316,9 @@ func parseJSONIntOrFloat(state []rune, r rune) ([]rune, interface{}, bool, int) 
 		parseFn := parseJSONFloatRestFirst
 		return state, parseFn, false, parseNext
 	}
+	if r == 'E' || r == 'e' {
+		return state, parseJSONExpRestNumOrSign, false, parseNext
+	}
 	return state, parseJSONIntOrFloat, false, parseError
 }
 
@@ -339,8 +342,42 @@ func parseJSONFloatRest(state []rune, r rune) ([]rune, interface{}, bool, int) {
 	if r <= '9' && r >= '0' {
 		return state, parseJSONFloatRest, false, parseNext
 	}
+	if r == 'E' || r == 'e' {
+		return state, parseJSONExpRestNumOrSign, false, parseNext
+	}
 	return state, parseJSONFloatRest, false, parseError
+}
 
+func parseJSONExpRestNumOrSign(state []rune, r rune) ([]rune, interface{}, bool, int) {
+	if r >= '1' && r <= '9' {
+		return state, parseJSONExpRestRest, false, parseNext
+	}
+	if r == '+' || r == '-' {
+		return state, parseJSONExpRestSign, false, parseNext
+	}
+	return state, parseJSONExpRestNumOrSign, false, parseError
+}
+
+func parseJSONExpRestSign(state []rune, r rune) ([]rune, interface{}, bool, int) {
+	if r >= '1' && r <= '9' {
+		return state, parseJSONExpRestRest, false, parseNext
+	}
+	return state, parseJSONExpRestSign, false, parseError
+}
+
+func parseJSONExpRestRest(state []rune, r rune) ([]rune, interface{}, bool, int) {
+	if r == '\n' || r == ' ' || r == '\t' || r == '\r' || r == '}' || r == ']' {
+		parseFn := parseJSONEndOrNextElement
+		return state, parseFn, true, parseNext
+	}
+	if r <= '9' && r >= '0' {
+		return state, parseJSONExpRestRest, false, parseNext
+	}
+	if r == ',' {
+		parseFn := parseJSONEndOrNextElement
+		return state, parseFn, true, parseNext
+	}
+	return state, parseJSONExpRestRest, false, parseError
 }
 
 func parseJSONFloatOrZero(state []rune, r rune) ([]rune, interface{}, bool, int) {
